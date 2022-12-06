@@ -1,17 +1,24 @@
 'use strict';
 
-function calcAge1(birthYear) {
-    const age = 2022 - birthYear;
-    return (age);
+
+function average(firstScore, secondScore, thirdScore) {
+    const averageScore = (firstScore + secondScore + thirdScore) / 3;
+    return averageScore;
 }
 
-const age1 = calcAge1(1990);
-console.log(age1);
+const avgDolphings = average(85, 54, 41);
+const avgCoalas = average(23, 34, 27);
 
-const calcAge2 = function (birthYear) {
-    return 2022 - birthYear;
+function checkWinner(avgCoalas, avgDolphings) {
+    if (avgCoalas >= (avgDolphings * 2)) {
+        console.log(`Coalas wins ${avgCoalas} to ${avgDolphings}`);
+    }
+    else if (avgDolphings >= (avgCoalas * 2)) {
+        console.log(`Dolphins win ${avgDolphings} to ${avgCoalas}`)
+    }
+    else {
+        console.log(`no one is winning`)
+    }
 }
 
-const age2 = calcAge2(1990);
-
-console.log(age1, age2);
+checkWinner(avgCoalas, avgDolphings);

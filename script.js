@@ -1,17 +1,20 @@
 'use strict';
 
-function calcAge1(birthYear) {
-    const age = 2022 - birthYear;
-    return (age);
+function calcTip(billValue) {
+
+    const tip = billValue >= 50 && billValue <= 300 ? billValue * 0.15 : billValue * 0.2;
+
+    return tip;
 }
 
-const age1 = calcAge1(1990);
-console.log(age1);
+console.log(calcTip(100)); //check function work properly
 
-const calcAge2 = function (birthYear) {
-    return 2022 - birthYear;
-}
+const billsArray = [125, 555, 44];
 
-const age2 = calcAge2(1990);
+const tipsArray = [];
+tipsArray.push(calcTip(billsArray[0]), calcTip(billsArray[1]), calcTip(billsArray[2]));
+console.log(tipsArray);
 
-console.log(age1, age2);
+
+const totalArray = [tipsArray[0] + billsArray[0], tipsArray[1] + billsArray[1], tipsArray[2] + billsArray[2]];
+console.log(`total value ${totalArray}`);

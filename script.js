@@ -1,17 +1,5 @@
-'use strict';
+const billValue = 440;
 
-function calcAge1(birthYear) {
-    const age = 2022 - birthYear;
-    return (age);
-}
+const tip = billValue >= 50 && billValue <= 300 ? 0.15 * billValue : 0.2 * billValue;
 
-const age1 = calcAge1(1990);
-console.log(age1);
-
-const calcAge2 = function (birthYear) {
-    return 2022 - birthYear;
-}
-
-const age2 = calcAge2(1990);
-
-console.log(age1, age2);
+console.log(`The bill was ${billValue} the tip was ${tip} and the total value ${tip + billValue}`);
